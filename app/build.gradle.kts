@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -70,4 +71,19 @@ dependencies {
     //
     implementation("androidx.navigation:navigation-fragment-compose:2.8.0-alpha07")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
+
+    // To use Kotlin Symbol Processing (KSP)
+  //  ksp("androidx.room:room-compiler:$room_version")
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$room_version")
+
+
+
 }

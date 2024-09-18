@@ -39,9 +39,14 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 
 @Preview(showBackground = true)
+
 @Composable
 fun GreetingPreview() {
     ContactApp2Theme {
         Greeting("Android")
     }
+}
+
+class ContactAppviewModel {
+
 }
