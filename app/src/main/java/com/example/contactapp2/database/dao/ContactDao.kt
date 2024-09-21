@@ -19,7 +19,7 @@ interface ContactDao
     suspend fun deleteContact(contacts: List<Contact>)
 
     @Query("SELECT * FROM Contact_table")
-    fun getContactsOrderedByName(): Flow<List<Contact>>
+    fun getAllContacts(): Flow<List<Contact>>
 
 
 
