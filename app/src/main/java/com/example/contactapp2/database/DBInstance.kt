@@ -2,9 +2,11 @@ package com.example.contactapp2.database
 
 import android.content.Context
 import androidx.room.Room
-import com.example.contactapp2.ContactAppDatabase
 
- object DBInstance {
+import com.example.contactapp2.DB_NAME
+
+object DBInstance
+{
      private var dbInstance: ContactAppDatabase? = null
 
      fun getInstance(context: Context): ContactAppDatabase {
@@ -13,13 +15,12 @@ import com.example.contactapp2.ContactAppDatabase
                  dbInstance = Room.databaseBuilder(
                      context,
                      ContactAppDatabase::class.java,
-                     "test"
+                     DB_NAME
                  ).build()
 
              }
              return dbInstance!!
          }
-
 
      }
  }

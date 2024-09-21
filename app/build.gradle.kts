@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.compose.compiler)
     id("com.google.devtools.ksp")
 }
 
@@ -69,8 +70,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     //
-    implementation("androidx.navigation:navigation-fragment-compose:2.8.0-alpha07")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    val nav_version = "2.8.1"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
 
     val room_version = "2.6.1"
 
